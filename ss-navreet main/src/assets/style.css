@@ -1,0 +1,170 @@
+/* ===============================
+   Variables & Base Resets
+================================== */
+:root {
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-primary: #4ca1af;
+  --color-primary-hover: #3b7f91;
+  --color-text: #e0e0e0;
+  --color-muted: #a0a0a0;
+  --color-border: #2a2a2a;
+  --radius: 10px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ===============================
+   Layout Wrapper
+================================== */
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ===============================
+   Header
+================================== */
+header {
+  background: linear-gradient(to right, #1a1a1a, var(--color-primary));
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: #fff;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ===============================
+   Navigation
+================================== */
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+nav a:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ===============================
+   Main Content
+================================== */
+main {
+  max-width: 960px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2.5rem 3rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h2, h3 {
+  color: var(--color-text);
+  margin-top: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+}
+
+/* ===============================
+   Buttons
+================================== */
+button,
+.button {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   Footer
+================================== */
+footer {
+  background-color: #181818;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ===============================
+   Responsive Design
+================================== */
+@media (max-width: 768px) {
+  main {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+}
